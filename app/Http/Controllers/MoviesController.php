@@ -11,14 +11,18 @@ class MoviesController extends Controller
     {
         $movies = Movie::all();
 
-        return view('movies.index',compact('movies'));
+        $lastFiveMovies = Movie::latest()->take(5)->get();
+
+        return view('movies.index',compact('movies','lastFiveMovies'));
     }
 
     public function show($id)
     {
         $movie = Movie::with('comments')->findOrFail($id);
 
-        return view('movies.show', compact('movie'));
+        $lastFiveMovies = Movie::latest()->take(5)->get();
+
+        return view('movies.show', compact('movie','lastFiveMovies'));
     }
 
     public function create()

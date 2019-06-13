@@ -4,4 +4,6 @@
     @foreach ($genreMovies as $movie)
         <h3> {{ $movie->title }} </h3>
     @endforeach
+        </div>
+        @include('partials.sidebar')
 @endsection

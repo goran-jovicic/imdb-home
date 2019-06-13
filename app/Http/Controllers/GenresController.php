@@ -11,6 +11,8 @@ class GenresController extends Controller
     {
         $genreMovies = Movie::where('genre', $genre)->get();
 
-        return view('genres.movies', compact('genreMovies'));
+        $lastFiveMovies = Movie::latest()->take(5)->get();
+
+        return view('genres.movies', compact('genreMovies', 'lastFiveMovies'));
     }
 }
