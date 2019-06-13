@@ -7,7 +7,7 @@
             </h1>
             <h1 class="blog-title"
             style="text-align:center;">
-                <a href="/add">Add movie</a>
+                <a href="/create">Add movie</a>
             </h1>
         <div>
     </div>
