@@ -14,6 +14,7 @@ class Movie extends Model
         'title' => 'required',
         'genre' => 'required',
         'production_year' => 'required',
+        'director' => 'required',
         'storyline' => 'required'
     ];
 }
