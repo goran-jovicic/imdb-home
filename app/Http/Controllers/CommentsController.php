@@ -10,6 +10,8 @@ class CommentsController extends Controller
 {
     public function store($movieId)
     {
+        $this->validate(request(), Comment::STORE_RULES);
+
         $movie = Movie::find($movieId);
         // $team->comments()->create(request()->all());
 
