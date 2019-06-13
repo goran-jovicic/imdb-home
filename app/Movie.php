@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Comment;
 use Illuminate\Database\Eloquent\Model;
 
 class Movie extends Model
@@ -17,4 +18,9 @@ class Movie extends Model
         'director' => 'required',
         'storyline' => 'required'
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
